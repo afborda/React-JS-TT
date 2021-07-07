@@ -1,26 +1,39 @@
 import "./app.css";
+import Header from "./components/Header";
+import Button from "./components/Button";
+
+const links = [
+  {
+    id: "1",
+    label: "Inicio",
+  },
+  {
+    id: "2",
+    label: "Meio",
+  },
+  {
+    id: "3",
+    label: "Fim",
+  },
+  {
+    id: "4",
+    label: "voltei",
+  },
+];
 
 function App() {
   return (
-    <div>
-      <p>Abner Fonseca</p>
-      <MainNav />
-      <Button label="Clica aqui 2" type={false} />
+    <div className="container">
+      <Header
+        logo="https://i.pinimg.com/originals/1e/06/e1/1e06e107f0ca520aed316957b685ef5c.jpg"
+        listaLink={links}
+        imageText="Teste"
+      />
+      <Button label="3" cor="azul" />
+      <Button label="2" cor="vermelho" />
+      <Button label="1" cor="azul" />
     </div>
   );
 }
-
-const Button = ({ label, type }) => {
-  return <button className={type ? "active" : "inativo"}>{label}</button>;
-};
-
-const MainNav = () => {
-  return (
-    <nav>
-      <a href>Link 1</a>
-      <Button label="Login" type={false} />
-    </nav>
-  );
-};
 
 export default App;

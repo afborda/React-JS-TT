@@ -1,0 +1,19 @@
+/* Header */
+
+.container-header {
+  background: #ccc;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+}
+
+.estilo-tabela {
+  display: flex;
+  list-style-type: none;
+}
+
+.estilo-tabela li {
+  padding: 5px;
+}
