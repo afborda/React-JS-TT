@@ -14,6 +14,9 @@ function Routes() {
         <Route exact path="/Filmes">
           <Filmes />
         </Route>
+        <Route exact path="/Filmes/:id">
+          <Filmes />
+        </Route>
         <Route exact path="/Topmovie">
           <TopMovie />
         </Route>

@@ -1,11 +1,21 @@
 import React from "react";
 
-// import { Container } from './styles';
+import { NavLink } from "react-router-dom";
 
-function CustomButton({ children, ...props }) {
+import { Container, ContainerButton } from "./styled";
+
+function CustomButton({ children, link, route, ...props }) {
   return (
     <>
-      <button {...props}>{children}</button>
+      {link ? (
+        <ContainerButton>
+          <NavLink to={route}>{children}</NavLink>
+        </ContainerButton>
+      ) : (
+        <ContainerButton>
+          <button {...props}>{children}</button>
+        </ContainerButton>
+      )}
     </>
   );
 }
