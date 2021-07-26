@@ -2,7 +2,6 @@ import React, { useState } from "react";
 
 import Logo from "../../assets/Icons-logo.png";
 import { menuLink } from "../../mock/MenuLink";
-import ModalCustom from "../Modal";
 import {
   Container,
   LoginButton,
