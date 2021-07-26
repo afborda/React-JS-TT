@@ -10,7 +10,7 @@ function Footer() {
   return (
     <Container>
       <div>
-        <p>{nomeFilme}</p>
+        <p>{nomeFilme.toUpperCase()}</p>
       </div>
       <div>
         {footerLink.map((item, index) => (

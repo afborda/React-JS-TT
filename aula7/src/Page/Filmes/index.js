@@ -19,7 +19,7 @@ import {
 
 function Filmes() {
   const [name, setName] = useState("");
-  const [data, setData] = useState([]);
+  const [data, setData] = useState(null);
   const [page, setPage] = useState(1);
   const [response, setResponse] = useState(false);
   const { setNomeFilme } = useContext(GlobalContext);
@@ -27,10 +27,8 @@ function Filmes() {
   const getMovieName = async (value, page) => {
     setNomeFilme(value);
     const response = await GetMovies(value, page);
-    console.log(data);
-    if (data.length === 0) {
+    if (data === null) {
       setData(response.data.Search);
-      setName("hulk");
     }
     setResponse(response);
     return response;
