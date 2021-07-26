@@ -38,3 +38,26 @@ export const ContainerData = styled.div`
     color: #fff;
   }
 `;
+
+export const ContainerDetails = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 90px;
+  h1 {
+    color: #fff;
+    font-weight: 700;
+    font-size: 30px;
+    margin: 15px 0;
+  }
+  .dados-filmes {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    p {
+      color: #fff;
+      font-size: 16px;
+    }
+  }
+`;

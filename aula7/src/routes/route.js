@@ -4,6 +4,7 @@ import Footer from "../components/Footer";
 
 import Header from "../components/Header";
 import Filmes from "../Page/Filmes";
+import MovieDatails from "../Page/MovieDatails";
 import Sobre from "../Page/Sobre";
 import TopMovie from "../Page/TopMovie";
 
@@ -16,7 +17,7 @@ function Routes() {
           <Filmes />
         </Route>
         <Route exact path="/Filmes/:id">
-          <Filmes />
+          <MovieDatails />
         </Route>
         <Route exact path="/Topmovie">
           <TopMovie />

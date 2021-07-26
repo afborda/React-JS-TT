@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { AiOutlineSearch } from "react-icons/ai";
 import { GoPlus } from "react-icons/go";
 
-import Card from "../../components/Card";
+import { Card } from "../../components/Card";
 import CustomButton from "../../components/CustomButton";
 import Input from "../../components/Input";
 import MovieNotFound from "../../components/MovieNotFound";
@@ -21,7 +21,7 @@ function Filmes() {
   const [name, setName] = useState("");
   const [data, setData] = useState([]);
   const [page, setPage] = useState(1);
-  const [disable, setDisable] = useState(false);
+  const [response, setResponse] = useState(false);
   const { setNomeFilme } = useContext(GlobalContext);
 
   const getMovieName = async (value, page) => {
@@ -29,10 +29,10 @@ function Filmes() {
     const response = await GetMovies(value, page);
     console.log(data);
     if (data.length === 0) {
-      setData(response.Search);
+      setData(response.data.Search);
       setName("hulk");
     }
-
+    setResponse(response);
     return response;
   };
 
@@ -41,17 +41,19 @@ function Filmes() {
     if (data !== []) {
       setData([]);
     }
-    console.log(data);
     const filmes = await getMovieName(name);
-    setData(filmes.Search);
+    setData(filmes.data.Search);
   };
 
   const getNewPage = async () => {
-    setPage(page + 1);
-    const filmes = await getMovieName(name, page);
-    setData(data.concat(filmes.Search));
-    if (data.length === filmes.totalResults) {
-      setDisable(true);
+    try {
+      if (response.data.Response) {
+        setPage(page + 1);
+        const filmes = await getMovieName(name, page);
+        setData(data.concat(filmes.data.Search));
+      }
+    } catch (err) {
+      alert("Acabou");
     }
   };
 
@@ -87,11 +89,7 @@ function Filmes() {
             })}
           </ContainerCard>
           <CenterButton>
-            <CustomButton
-              disabled={disable}
-              onClick={() => getNewPage()}
-              size="lg"
-            >
+            <CustomButton onClick={() => getNewPage()} size="lg">
               <BodyButton>
                 <p>Mais Filmes</p>
                 <GoPlus />
