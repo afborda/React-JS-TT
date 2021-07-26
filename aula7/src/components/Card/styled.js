@@ -23,6 +23,10 @@ export const Container = styled.div`
 export const ContainerImage = styled.div`
   max-width: 250px;
   height: 350px;
+  margin-bottom: 10px;
+  img {
+    border-radius: 8px;
+  }
 `;
 
 export const ContainerData = styled.div`

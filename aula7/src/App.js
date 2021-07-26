@@ -1,11 +1,14 @@
+import NameContext from "./Context/NameContext";
 import GlobalStyle from "./globalStyles";
 import Routes from "./routes/route";
 
 function App() {
   return (
     <>
-      <GlobalStyle />
-      <Routes />
+      <NameContext>
+        <GlobalStyle />
+        <Routes />
+      </NameContext>
     </>
   );
 }

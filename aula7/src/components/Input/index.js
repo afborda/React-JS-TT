@@ -1,12 +1,12 @@
 import React from "react";
 
-import { Container } from "./styled";
+import { Container, InputStyle } from "./styled";
 
 function Input({ id, value, label, setValue, type, ...props }) {
   return (
     <>
       <label htmlFor={id}>{label}</label>
-      <input
+      <InputStyle
         id={id}
         type={type}
         value={value}

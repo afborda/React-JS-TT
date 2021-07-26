@@ -4,14 +4,14 @@ import CustomButton from "../CustomButton";
 import { Container, ContainerImage, ContainerData } from "./styled";
 
 function Card({ data }) {
-  console.log(data);
+  const NotFound = "https://movieclip.co.uk/assets/images/imdbnoimage.jpg";
 
   const { Poster, Title, Type, Year, imdbID } = data;
 
   return (
     <Container>
       <ContainerImage>
-        <img src={Poster} alt={Title} />
+        <img src={Poster !== "N/A" ? Poster : NotFound} alt={Title} />
       </ContainerImage>
       <h1>{Title}</h1>
       <ContainerData>

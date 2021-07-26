@@ -8,6 +8,26 @@ export const ContainerButton = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 15px;
+  border-radius: 8px;
 `;
 
-export const NavLinkCustom = styled(NavLink)``;
+export const NavLinkCustom = styled(NavLink)`
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+`;
+
+export const ButtonStyle = styled.button`
+  width: 100%;
+  height: 100%;
+  background: none;
+  border: none;
+  color: #fff;
+`;
+
+export const ButtonIcon = styled(ContainerButton)`
+  width: ${({ size }) => (size === "lg" ? "300px" : "64px")};
+  height: 40px;
+`;

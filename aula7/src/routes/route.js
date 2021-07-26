@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
+import Footer from "../components/Footer";
 
 import Header from "../components/Header";
 import Filmes from "../Page/Filmes";
@@ -11,7 +12,7 @@ function Routes() {
     <BrowserRouter>
       <Header />
       <Switch>
-        <Route exact path="/Filmes">
+        <Route exact path="/">
           <Filmes />
         </Route>
         <Route exact path="/Filmes/:id">
@@ -27,6 +28,7 @@ function Routes() {
           <h1>404 not found</h1>
         </Route>
       </Switch>
+      <Footer />
     </BrowserRouter>
   );
 }

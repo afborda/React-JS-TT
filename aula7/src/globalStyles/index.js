@@ -15,6 +15,7 @@ img{
 }
 
 body{
+    background-color: #272727;
     
 }
 

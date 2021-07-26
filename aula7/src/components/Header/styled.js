@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
 export const Container = styled.div`
   width: 100%;
@@ -16,7 +16,7 @@ export const ContainerImage = styled.div`
   height: 40px;
 `;
 
-export const NavLinkCustom = styled(NavLink)`
+export const NavLinkCustom = styled(Link)`
   font-size: 18px;
   line-height: 28px;
   color: #ffffff;

@@ -1,10 +1,10 @@
 import { api } from "../config/index";
 
-async function GetMovies(name) {
+async function GetMovies(name, page) {
   try {
-    const response = await api.get(`/?apikey=fa70f7a7&s=${name}`);
+    const response = await api.get(`/?apikey=fa70f7a7&s=${name}&page=${page}`);
 
-    return response.data.Search;
+    return response.data;
   } catch (err) {
     alert(err);
   }

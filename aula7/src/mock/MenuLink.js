@@ -4,11 +4,22 @@ export const menuLink = [
     label: "TOP Filmes",
   },
   {
-    route: "/Filmes",
+    route: "/",
     label: "Filmes",
   },
   {
     route: "/Sobre",
     label: "Sobre",
+  },
+];
+
+export const footerLink = [
+  {
+    route: "/Sobre",
+    label: "Sobre nós",
+  },
+  {
+    route: "/Api",
+    label: "API",
   },
 ];
